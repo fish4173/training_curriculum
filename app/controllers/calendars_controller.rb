@@ -6,6 +6,8 @@ class CalendarsController < ApplicationController
     @plan = Plan.new
   end
 
+
+
   # 予定の保存
   def create
     Plan.create(plan_params)
@@ -13,9 +15,8 @@ class CalendarsController < ApplicationController
   end
 
   private
-
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
   end
 
   def getWeek
